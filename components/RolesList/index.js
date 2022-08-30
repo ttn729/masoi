@@ -43,15 +43,6 @@ export default function Players() {
             disablePadding
           >
             <ListItemButton role={undefined} onClick={handleToggle(value)} dense>
-              <ListItemIcon>
-                <Checkbox
-                  edge="start"
-                  checked={checked.indexOf(value) !== -1}
-                  tabIndex={-1}
-                  disableRipple
-                  inputProps={{ 'aria-labelledby': labelId }}
-                />
-              </ListItemIcon>
               <ListItemText id={labelId} primary={`${value}`} />
             </ListItemButton>
           </ListItem>
