@@ -2,6 +2,7 @@ import { Button, Stack } from "@mui/material"
 import { Container } from "@mui/system";
 import { useSelector, useDispatch } from 'react-redux'
 import React, { useState } from 'react';
+import { SHUFFLE } from '../../redux/playersSlice';
 
 // https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array
 function shuffleArray(array) {
@@ -14,7 +15,8 @@ function shuffleArray(array) {
 export default function RandomizeButton() {
     const roles = useSelector((state) => state.role.roles);
     const players = useSelector((state) => state.player.players);
-    const [message, setMessage] = React.useState("");
+    const shuffledPlayers = useSelector((state) => state.player.shuffled);
+    const dispatch = useDispatch();
 
     const onClickButton = () => {
         if (roles.length != players.length) {
@@ -23,12 +25,13 @@ export default function RandomizeButton() {
         else {
             const shuffled = [...players];
             shuffleArray(shuffled);
-            setMessage(
-                <Stack direction="row" justifyContent="center" spacing={20}>
-                    <Stack>{roles.map(role => <p key={role}>{role}</p>)}</Stack>
-                    <Stack>{shuffled.map(player => <p key={player}>{player}</p>)}</Stack>
-                </Stack>
-            );  
+            dispatch(
+                SHUFFLE(
+                    <Stack direction="row" justifyContent="center" spacing={20}>
+                        <Stack>{roles.map(role => <p key={role}>{role}</p>)}</Stack>
+                        <Stack>{shuffled.map(player => <p key={player}>{player}</p>)}</Stack>
+                    </Stack>
+                    ));
         }
     }
 
@@ -39,10 +42,10 @@ export default function RandomizeButton() {
                 <Button onClick={() => onClickButton()}>Randomize!</Button>
 
             </Stack>
-            <h1>{message}</h1>
+            <h1>{shuffledPlayers}</h1>
 
         </Container>
-        
+
 
     )
-};
+}

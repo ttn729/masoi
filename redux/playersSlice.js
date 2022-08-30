@@ -15,6 +15,7 @@ export const playersSlice = createSlice({
             "a Skinny",
             "Coli"
         ],
+        shuffled: []
     },
     reducers: {
         PREPEND: (state, action) => {
@@ -23,9 +24,12 @@ export const playersSlice = createSlice({
         REMOVE: (state, action) => {
             state.players = state.players.filter(item => item != action.payload)
         },
+        SHUFFLE: (state, action) => {
+            state.shuffled = action.payload;
+        }
     },
-})
+});
 
-export const {PREPEND, REMOVE} = playersSlice.actions
+export const {PREPEND, REMOVE, SHUFFLE} = playersSlice.actions
 
 export default playersSlice.reducer
