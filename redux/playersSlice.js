@@ -8,7 +8,12 @@ export const playersSlice = createSlice({
             "a Edric",
             "Julia",
             "c Tủn",
-            "c BT"
+            "c BT",
+            "c nhum",
+            "c Ngân",
+            "c Yuuki",
+            "a Skinny",
+            "Coli"
         ],
     },
     reducers: {
