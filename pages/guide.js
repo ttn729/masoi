@@ -22,6 +22,7 @@ export default function Guide() {
         <h1 className={styles.title}>
           Spicy Ma Sói Roles
         </h1>
+        <h2>Đang tuyển dụng thiết kế đồ họa :)) </h2>
 
       </main>
     </div>
