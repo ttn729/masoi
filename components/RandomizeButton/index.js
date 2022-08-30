@@ -25,8 +25,8 @@ export default function RandomizeButton() {
             shuffleArray(shuffled);
             setMessage(
                 <Stack direction="row" justifyContent="center" spacing={20}>
-                    <Stack>{roles.map(role => <p>{role}</p>)}</Stack>
-                    <Stack>{shuffled.map(player => <p>{player}</p>)}</Stack>
+                    <Stack>{roles.map(role => <p key={role}>{role}</p>)}</Stack>
+                    <Stack>{shuffled.map(player => <p key={player}>{player}</p>)}</Stack>
                 </Stack>
             );  
         }
