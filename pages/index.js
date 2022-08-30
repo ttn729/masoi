@@ -23,7 +23,7 @@ export default function Home() {
           Spicy Ma Sói Helper
         </h1>
 
-        <Box sx={{ display: 'flex'}}>
+        <Box sx={{ display: 'flex', justifyContent: "center" }}>
           <Stack justifyContent="top" alignItems="center" spacing={2}>
             <h1>Roles</h1>
             <RolesBar />
