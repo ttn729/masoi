@@ -2,12 +2,15 @@ import * as React from 'react';
 import DeleteIcon from '@mui/icons-material/Delete';
 import { List, ListItem, ListItemButton, ListItemIcon, ListItemText, Checkbox, IconButton } from '@mui/material';
 import { useSelector } from 'react-redux';
+import { REMOVE } from '../../redux/playersSlice';
+
 
 export default function Players() {
   const players = useSelector((state) => state.player.players)
+  const dispatch = useDispatch();
 
   const onClickDelete = (player) => {
-
+    dispatch(REMOVE(player));
   }
 
   const [checked, setChecked] = React.useState([0]);
