@@ -1,4 +1,5 @@
 # Ma Sói Helper
+https://masoi.vercel.app/
 
 A webapp that randomizes player names and roles. 
 
